@@ -30,15 +30,25 @@ public class BufferReaderWriterDemo {
 			String line = bReader .readLine();
 			int linecount = 0;
 			int sentenceCount = 0;
+			int wordCount =0;
+			int charCount =0;
 			while(line!= null)
 			{
-				line.split("[.]");
+				String[] sentence = line.split("[.]");
+				sentenceCount = sentenceCount + sentence.length;
+				String[] words = line.split(" ");
+				wordCount = wordCount + words.length;
 				System.out.println(line);
+				charCount = charCount + line.length();
 				linecount++;
-				System.out.println(line);
+				
 				line = bReader.readLine();
 			}
-			System.out.println("No. of Lines " +  linecount);
+			System.out.println("No. of Lines " +  linecount);		
+			System.out.println(" No of Sentences "+ sentenceCount);
+			System.out.println(" No of Words "+ wordCount);
+			System.out.println("No of characters " + charCount);
+			
 			} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
